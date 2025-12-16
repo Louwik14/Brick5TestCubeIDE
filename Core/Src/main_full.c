@@ -66,8 +66,7 @@ HCD_HandleTypeDef hhcd_USB_OTG_HS;
 SDRAM_HandleTypeDef hsdram1;
 
 /* USER CODE BEGIN PV */
-volatile uint32_t alive_counter = 0;
-volatile uint32_t boot_magic = 0xCAFEBABE;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -93,6 +92,7 @@ static void MX_TIM8_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 /* USER CODE END 0 */
 
 /**
@@ -144,15 +144,12 @@ int main(void)
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 
-  /* ===== TEST DEBUG MINIMAL ===== */
-  __asm volatile ("bkpt 0");   // preuve que main est atteint
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    alive_counter++;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
